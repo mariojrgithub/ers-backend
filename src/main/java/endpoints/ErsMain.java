@@ -52,13 +52,21 @@ public class ErsMain {
 			ctx.json(rqById);
 		});
 
-		// endpoint to add a request
+		// add a request
 		myServer.post("/requests/add", ctx -> {
 			RequestPojo newRequest = ctx.bodyAsClass(RequestPojo.class);
 			RequestPojo returnedRequest = employeeService.createNewRequest(newRequest);
 
 			ctx.json(returnedRequest);
 
+		});
+		
+		// login employee
+		myServer.get("/login", ctx -> {
+			EmployeePojo login = ctx.bodyAsClass(EmployeePojo.class);
+			EmployeePojo returnedLogin = employeeService.loginEmployee(login);
+			
+			ctx.json(returnedLogin);
 		});
 	}
 

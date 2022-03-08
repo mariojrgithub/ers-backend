@@ -27,9 +27,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public EmployeePojo loginEmployee(String employeeEmail, String employeePassword, String employeeRole)
-			throws SystemException {
-		return employeeDao.loginEmployee(employeeEmail, employeePassword, employeeRole);
+	public EmployeePojo loginEmployee(EmployeePojo employeePojo) throws SystemException {
+		return employeeDao.loginEmployee(employeePojo);
 	}
 
 	@Override

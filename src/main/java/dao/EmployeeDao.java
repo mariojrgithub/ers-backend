@@ -15,7 +15,7 @@ public interface EmployeeDao {
 	EmployeePojo fetchOneEmployee(int employeeId) throws SystemException;
 
 	// login
-	EmployeePojo loginEmployee(String employeeEmail, String employeePassword, String employeeRole) throws SystemException;
+	EmployeePojo loginEmployee(EmployeePojo employeePojo) throws SystemException;
 
 	// list all employees
 	List<EmployeePojo> fetchAllEmployees() throws SystemException;

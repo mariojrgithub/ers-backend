@@ -76,11 +76,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return employeePojo;
 	}
 
-	public EmployeePojo loginEmployee(String employeeEmail, String employeePassword, String employeeRole)
+	public EmployeePojo loginEmployee(EmployeePojo employeePojo)
 			throws SystemException {
 		LOG.info("Entered loginEmployee() in DAO");
 
-		EmployeePojo employeePojo = null;
+//		EmployeePojo employeePojo = null;
 		EmployeePojo employeePojo2 = null;
 
 		Connection conn = DBUtil.obtainConnection();
@@ -88,11 +88,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		try {
 			Statement stmt = conn.createStatement();
 
-			employeePojo = fetchOneEmployee(employeeEmail);
+//			employeePojo = fetchOneEmployee(employeeEmail);
 
 			String query = "SELECT * FROM employee_details WHERE " + " employee_email=" + "'"
-					+ employeePojo.getEmployeeEmail() + "'" + " AND employee_password=" + "'" + employeePassword
-					+ "' AND employee_role='" + employeeRole + "'";
+					+ employeePojo.getEmployeeEmail() + "'" + " AND employee_password=" + "'" + employeePojo.getEmployeePassword()
+					+ "' AND employee_role='" + employeePojo.getEmployeeRole() + "'";
 
 			ResultSet rs = stmt.executeQuery(query);
 
@@ -101,7 +101,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 						rs.getInt(5), rs.getString(6));
 			}
 
-		} catch (SQLException | SystemException e) {
+		} catch (SQLException e) {
 			throw new SystemException();
 		}
 
