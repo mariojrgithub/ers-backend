@@ -149,4 +149,73 @@ public class RequestDaoImpl implements RequestDao {
 		return allRequests;
 	}
 
+	@Override
+	public List<RequestPojo> fetchEmployeePendingRequests(int employeeId) throws SystemException {
+		
+		LOG.info("Entered fetchEmployeePendingRequests() in DAO");
+
+		// create ArrayList of all pending requests from DB
+		List<RequestPojo> allPendingRequests = new ArrayList<>();
+
+		Connection conn = DBUtil.obtainConnection();
+
+		try {
+			Statement stmt = conn.createStatement();
+
+			String query = "SELECT * FROM expense_details WHERE expense_status='pending' AND employee_id=" + employeeId;
+
+			ResultSet rsRequest = stmt.executeQuery(query);
+
+			// iterate through result set
+			while (rsRequest.next()) {
+				// copy each request into a RequestPojo
+				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2), rsRequest.getInt(3),
+						rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+				// add requests to ArrayList
+				allPendingRequests.add(requestPojo);
+			}
+
+		} catch (SQLException e) {
+			throw new SystemException();
+		}
+
+		LOG.info("Exited fetchEmployeePendingRequests() in DAO");
+		return allPendingRequests;
+	}
+
+	@Override
+	public List<RequestPojo> fetchEmployeeResolvedRequests(int employeeId) throws SystemException {
+		
+		LOG.info("Entered fetchEmployeeResolvedRequests() in DAO");
+
+		// create ArrayList of all resolved requests from DB
+		List<RequestPojo> allResolvedRequests = new ArrayList<>();
+
+		Connection conn = DBUtil.obtainConnection();
+
+		try {
+			Statement stmt = conn.createStatement();
+
+			String query = "SELECT * FROM expense_details WHERE expense_status='resolved' AND employee_id=" + employeeId;
+
+			ResultSet rsRequest = stmt.executeQuery(query);
+
+			// iterate through result set
+			while (rsRequest.next()) {
+				// copy each request into a RequestPojo
+				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2), rsRequest.getInt(3),
+						rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+				// add requests to ArrayList
+				allResolvedRequests.add(requestPojo);
+			}
+
+		} catch (SQLException e) {
+			throw new SystemException();
+		}
+
+		LOG.info("Exited fetchEmployeeResolvedRequests() in DAO");
+		return allResolvedRequests;
+	}
+		
+
 }

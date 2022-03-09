@@ -6,7 +6,7 @@ public class EmployeePojo {
 	private String employeeRole;
 	private String employeeEmail;
 	private String employeePassword;
-	private int expenseId;
+	private int expenseId; // not needed
 	private String employeeName;
 	public EmployeePojo() {
 		super();

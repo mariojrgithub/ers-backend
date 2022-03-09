@@ -35,4 +35,14 @@ public class RequestServiceImpl implements RequestService {
 		return requestDao.fetchEmployeeRequests(employeeId);
 	}
 
+	@Override
+	public List<RequestPojo> fetchEmployeePendingRequests(int employeeId) throws SystemException {
+		return requestDao.fetchEmployeePendingRequests(employeeId);
+	}
+
+	@Override
+	public List<RequestPojo> fetchEmployeeResolvedRequests(int employeeId) throws SystemException {
+		return requestDao.fetchEmployeeResolvedRequests(employeeId);
+	}
+
 }

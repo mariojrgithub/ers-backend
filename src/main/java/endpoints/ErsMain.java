@@ -28,46 +28,70 @@ public class ErsMain {
 		});
 
 		// fetch all requests
-		myServer.get("/api/requests", ctx -> {
+		myServer.get("/api/manager/requests", ctx -> {
 			List<RequestPojo> allRequests = requestService.fetchAllRequests();
 			ctx.json(allRequests);
 		});
 
 		// fetch all pending requests
-		myServer.get("/api/requests/pending", ctx -> {
+		myServer.get("/api/manager/requests/pending", ctx -> {
 			List<RequestPojo> allPendingRequests = requestService.fetchPendingRequests();
 			ctx.json(allPendingRequests);
 		});
 
 		// fetch all resolved requests
-		myServer.get("/api/requests/resolved", ctx -> {
+		myServer.get("/api/manager/requests/resolved", ctx -> {
 			List<RequestPojo> allResolvedRequests = requestService.fetchResolvedRequests();
 			ctx.json(allResolvedRequests);
 		});
 
 		// fetch requests by ID
-		myServer.get("/api/requests/{id}", ctx -> {
+		myServer.get("/api/manager/requests/{id}", ctx -> {
 			String id = ctx.pathParam("id");
 			List<RequestPojo> rqById = requestService.fetchEmployeeRequests(Integer.parseInt(id));
 			ctx.json(rqById);
 		});
 
+		// login employee
+		myServer.get("/api/login", ctx -> {
+			EmployeePojo login = ctx.bodyAsClass(EmployeePojo.class);
+			EmployeePojo returnedLogin = employeeService.loginEmployee(login);
+
+			ctx.json(returnedLogin);
+		});
+
+//		new code 3/9/22
+
 		// add a request
-		myServer.post("/api/requests/add", ctx -> {
+		myServer.post("/api/associate/requests/add", ctx -> {
 			RequestPojo newRequest = ctx.bodyAsClass(RequestPojo.class);
 			RequestPojo returnedRequest = employeeService.createNewRequest(newRequest);
 
 			ctx.json(returnedRequest);
 
 		});
-		
-		// login employee
-		myServer.get("/api/login", ctx -> {
-			EmployeePojo login = ctx.bodyAsClass(EmployeePojo.class);
-			EmployeePojo returnedLogin = employeeService.loginEmployee(login);
-			
-			ctx.json(returnedLogin);
+
+		// fetch requests by ID
+		myServer.get("/api/associate/requests/{id}", ctx -> {
+			String id = ctx.pathParam("id");
+			List<RequestPojo> rqById = requestService.fetchEmployeeRequests(Integer.parseInt(id));
+			ctx.json(rqById);
 		});
+
+		// fetch all pending requests by associate
+		myServer.get("/api/associate/requests/pending/{id}", ctx -> {
+			String id = ctx.pathParam("id");
+			List<RequestPojo> allPendingRequests = requestService.fetchEmployeePendingRequests(Integer.parseInt(id));
+			ctx.json(allPendingRequests);
+		});
+
+		// fetch all resolved requests by associate
+		myServer.get("/api/associate/requests/resolved/{id}", ctx -> {
+			String id = ctx.pathParam("id");
+			List<RequestPojo> allResolvedRequests = requestService.fetchEmployeeResolvedRequests(Integer.parseInt(id));
+			ctx.json(allResolvedRequests);
+		});
+
 	}
 
 }
