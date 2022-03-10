@@ -230,7 +230,7 @@ public class RequestDaoImpl implements RequestDao {
 			Statement stmt = conn.createStatement();
 
 			String query = "UPDATE expense_details SET expense_amount=" + requestPojo.getExpenseAmount()
-					+ ", expense_status='" + requestPojo.getExpenseStatus() + "', adjudicated_date=NOW() WHERE expense_id=" + requestPojo.getExpenseId();
+					+ ", expense_status='" + requestPojo.getExpenseStatus() + "', adjudicated_date=NOW(), approve_deny='" + requestPojo.getApproveDeny() + "' WHERE expense_id=" + requestPojo.getExpenseId();
 
 			int rows = stmt.executeUpdate(query);
 
