@@ -35,7 +35,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 			if (rs.next()) {
 				employeePojo = new EmployeePojo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getInt(5), rs.getString(6));
+						rs.getString(5));
 			}
 
 		} catch (SQLException e) {
@@ -65,7 +65,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 			if (rs.next()) {
 				employeePojo = new EmployeePojo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getInt(5), rs.getString(6));
+						rs.getString(5));
 			}
 
 		} catch (SQLException e) {
@@ -98,7 +98,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 			if (rs.next()) {
 				employeePojo2 = new EmployeePojo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getInt(5), rs.getString(6));
+						rs.getString(5));
 			}
 
 		} catch (SQLException e) {
@@ -129,7 +129,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 			while (rs.next()) {
 				// copy each record into a EmployeePojo object
 				EmployeePojo employeePojo = new EmployeePojo(rs.getInt(1), rs.getString(2), rs.getString(3),
-						rs.getString(4), rs.getInt(5), rs.getString(6));
+						rs.getString(4), rs.getString(5));
 
 				// add EmployeePojo to ArrayList
 				allEmployees.add(employeePojo);
@@ -172,7 +172,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 			if (rsRequest.next()) {
 				requestPojo2 = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2), rsRequest.getInt(3),
-						rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+						rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6), rsRequest.getString(7));
 			}
 
 		} catch (SQLException e) {

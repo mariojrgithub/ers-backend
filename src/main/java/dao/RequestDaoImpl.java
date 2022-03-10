@@ -38,7 +38,7 @@ public class RequestDaoImpl implements RequestDao {
 			while (rsRequest.next()) {
 				// copy each request into a RequestPojo
 				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2),
-						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6), rsRequest.getString(7));
 				// add request to ArrayList
 				allRequests.add(requestPojo);
 			}
@@ -71,7 +71,7 @@ public class RequestDaoImpl implements RequestDao {
 			while (rsRequest.next()) {
 				// copy each request into a RequestPojo
 				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2),
-						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6), rsRequest.getString(7));
 				// add customer to ArrayList
 				allPendingRequests.add(requestPojo);
 			}
@@ -104,7 +104,7 @@ public class RequestDaoImpl implements RequestDao {
 			while (rsRequest.next()) {
 				// copy each request into a RequestPojo
 				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2),
-						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6), rsRequest.getString(7));
 				// add request to ArrayList
 				allResolvedRequests.add(requestPojo);
 			}
@@ -137,7 +137,7 @@ public class RequestDaoImpl implements RequestDao {
 			while (rsRequest.next()) {
 				// copy each request into a RequestPojo
 				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2),
-						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6), rsRequest.getString(7));
 				// add request to ArrayList
 				allRequests.add(requestPojo);
 			}
@@ -171,7 +171,7 @@ public class RequestDaoImpl implements RequestDao {
 			while (rsRequest.next()) {
 				// copy each request into a RequestPojo
 				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2),
-						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6), rsRequest.getString(7));
 				// add requests to ArrayList
 				allPendingRequests.add(requestPojo);
 			}
@@ -206,7 +206,7 @@ public class RequestDaoImpl implements RequestDao {
 			while (rsRequest.next()) {
 				// copy each request into a RequestPojo
 				RequestPojo requestPojo = new RequestPojo(rsRequest.getInt(1), rsRequest.getLong(2),
-						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6));
+						rsRequest.getInt(3), rsRequest.getString(4), rsRequest.getString(5), rsRequest.getString(6), rsRequest.getString(7));
 				// add requests to ArrayList
 				allResolvedRequests.add(requestPojo);
 			}
@@ -259,7 +259,7 @@ public class RequestDaoImpl implements RequestDao {
 
 			if (rs.next()) {
 				requestPojo = new RequestPojo(rs.getInt(1), rs.getLong(2),
-						rs.getInt(3), rs.getString(4), rs.getString(5), rs.getString(6));
+						rs.getInt(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
 			}
 
 		} catch (SQLException e) {

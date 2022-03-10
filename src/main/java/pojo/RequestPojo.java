@@ -8,13 +8,14 @@ public class RequestPojo {
 	private String requestDate;
 	private String expenseStatus;
 	private String adjudicatedDate;
+	private String approveDeny;
 	
 	public RequestPojo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public RequestPojo(int expenseId, long expenseAmount, int employeeId, String requestDate, String expenseStatus,
-			String adjudicatedDate) {
+			String adjudicatedDate, String approveDeny) {
 		super();
 		this.expenseId = expenseId;
 		this.expenseAmount = expenseAmount;
@@ -59,11 +60,18 @@ public class RequestPojo {
 	public void setAdjudicatedDate(String adjudicatedDate) {
 		this.adjudicatedDate = adjudicatedDate;
 	}
+
+	public String getApproveDeny() {
+		return approveDeny;
+	}
+	public void setApproveDeny(String approveDeny) {
+		this.approveDeny = approveDeny;
+	}
 	@Override
 	public String toString() {
 		return "RequestPojo [expenseId=" + expenseId + ", expenseAmount=" + expenseAmount + ", employeeId=" + employeeId
 				+ ", requestDate=" + requestDate + ", expenseStatus=" + expenseStatus + ", adjudicatedDate="
-				+ adjudicatedDate + "]";
+				+ adjudicatedDate + ", approveDeny=" + approveDeny + "]";
 	}
 	
 	

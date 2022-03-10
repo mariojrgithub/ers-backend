@@ -6,20 +6,18 @@ public class EmployeePojo {
 	private String employeeRole;
 	private String employeeEmail;
 	private String employeePassword;
-	private int expenseId; // not needed
 	private String employeeName;
 	public EmployeePojo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public EmployeePojo(int employeeId, String employeeRole, String employeeEmail, String employeePassword,
-			int expenseId, String employeeName) {
+			String employeeName) {
 		super();
 		this.employeeId = employeeId;
 		this.employeeRole = employeeRole;
 		this.employeeEmail = employeeEmail;
 		this.employeePassword = employeePassword;
-		this.expenseId = expenseId;
 		this.employeeName = employeeName;
 	}
 	public int getEmployeeId() {
@@ -46,12 +44,7 @@ public class EmployeePojo {
 	public void setEmployeePassword(String employeePassword) {
 		this.employeePassword = employeePassword;
 	}
-	public int getExpenseId() {
-		return expenseId;
-	}
-	public void setExpenseId(int expenseId) {
-		this.expenseId = expenseId;
-	}
+	
 	public String getEmployeeName() {
 		return employeeName;
 	}
@@ -61,8 +54,7 @@ public class EmployeePojo {
 	@Override
 	public String toString() {
 		return "EmployeePojo [employeeId=" + employeeId + ", employeeRole=" + employeeRole + ", employeeEmail="
-				+ employeeEmail + ", employeePassword=" + employeePassword + ", expenseId=" + expenseId
-				+ ", employeeName=" + employeeName + "]";
+				+ employeeEmail + ", employeePassword=" + employeePassword + ", employeeName=" + employeeName + "]";
 	}
 	
 	
