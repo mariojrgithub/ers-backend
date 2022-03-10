@@ -23,6 +23,7 @@ public class RequestPojo {
 		this.requestDate = requestDate;
 		this.expenseStatus = expenseStatus;
 		this.adjudicatedDate = adjudicatedDate;
+		this.approveDeny = approveDeny;
 	}
 	public int getExpenseId() {
 		return expenseId;
