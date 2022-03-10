@@ -157,7 +157,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 			// insert transaction
 			String queryInsertRequest = "INSERT INTO expense_details(expense_amount, employee_id, expense_status) VALUES("
-					+ requestPojo.getExpenseAmount() + ", " + requestPojo.getEmployeeId() + ", '" + requestPojo.getExpenseStatus() + "')";
+					+ requestPojo.getExpenseAmount() + ", " + requestPojo.getEmployeeId() + ", 'pending')";
 
 			conn.setAutoCommit(false);
 

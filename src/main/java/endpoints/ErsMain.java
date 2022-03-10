@@ -61,6 +61,22 @@ public class ErsMain {
 		});
 
 //		new code 3/9/22
+		
+		// fetch one request
+		myServer.get("/api/manager/request/{id}", ctx -> {
+			String id = ctx.pathParam("id");
+			RequestPojo oneRequest = requestService.fetchOneRequest(Integer.parseInt(id));
+			
+			ctx.json(oneRequest);
+		});
+		
+		// update request
+		myServer.put("/api/manager/requests", ctx -> {
+			RequestPojo updateRequest = ctx.bodyAsClass(RequestPojo.class);
+			RequestPojo returnedRequest = requestService.updateRequest(updateRequest);
+			
+			ctx.json(returnedRequest);
+		});
 
 		// add a request
 		myServer.post("/api/associate/requests/add", ctx -> {

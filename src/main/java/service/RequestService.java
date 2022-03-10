@@ -25,4 +25,9 @@ public interface RequestService {
 	// fetch requests of one employee
 	List<RequestPojo> fetchEmployeeResolvedRequests(int employeeId) throws SystemException;
 
+	// update request
+	RequestPojo updateRequest(RequestPojo requestPojo) throws SystemException;
+
+	// fetch one request
+	RequestPojo fetchOneRequest(int requestId) throws SystemException;
 }
