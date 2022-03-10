@@ -1,8 +1,9 @@
 CREATE DATABASE ers;
 
-CREATE TABLE employee_details(employee_id SERIAL PRIMARY KEY, employee_role VARCHAR(50), employee_email VARCHAR(50), employee_password VARCHAR(50), expense_id INT, employee_name VARCHAR(50));
+CREATE TABLE employee_details(employee_id SERIAL PRIMARY KEY, employee_role VARCHAR(50), employee_email VARCHAR(50), employee_password VARCHAR(50), employee_name VARCHAR(50));
 	
-CREATE TABLE expense_details(expense_id SERIAL PRIMARY KEY, expense_amount BIGINT, employee_id INT, request_date TIMESTAMP DEFAULT NOW(), expense_status VARCHAR(50), adjudicated_date TIMESTAMP);
+CREATE TABLE expense_details(expense_id SERIAL PRIMARY KEY, expense_amount BIGINT, employee_id INT, request_date TIMESTAMP DEFAULT NOW(), 
+								expense_status VARCHAR(50), adjudicated_date TIMESTAMP, approve_deny VARCHAR(50));
 
 INSERT INTO employee_details(employee_role, employee_email, employee_password, employee_name) VALUES('associate', 'mario@gmail.com', '1111', 'Mario');
 
