@@ -53,8 +53,9 @@ public class ErsMain {
 		});
 
 		// login employee
-		myServer.get("/api/login", ctx -> {
+		myServer.post("/api/login", ctx -> {
 			EmployeePojo login = ctx.bodyAsClass(EmployeePojo.class);
+			
 			EmployeePojo returnedLogin = employeeService.loginEmployee(login);
 			
 			if(returnedLogin == null) {
