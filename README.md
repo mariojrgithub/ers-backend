@@ -18,7 +18,7 @@ An Angular delivered reimbursement managements application consisting of:
 ### Technologies: 
 
 1. Java
-2. PostgresSQL for the database
+2. PostgreSQL for the database
 3. JDBC to access the database from Java
 4. log4j2 to log program information and errors
 5. Javalin to create endpoints for front end to access
