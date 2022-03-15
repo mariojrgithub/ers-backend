@@ -7,7 +7,7 @@ Date: 3/11/2022
 # Angular Expense Reimbursement System
 
 ### Description:
-
+      
 An Angular delivered reimbursement managements application consisting of:
 1. login / logout
 2. Manager specific endpoints
