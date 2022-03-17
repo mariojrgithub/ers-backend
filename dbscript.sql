@@ -1,5 +1,7 @@
 CREATE DATABASE ers;
 
+\c ers
+
 CREATE TABLE employee_details(employee_id SERIAL PRIMARY KEY, employee_role VARCHAR(50), employee_email VARCHAR(50), employee_password VARCHAR(50), employee_name VARCHAR(50));
 	
 CREATE TABLE expense_details(expense_id SERIAL PRIMARY KEY, expense_amount BIGINT, employee_id INT, request_date TIMESTAMP DEFAULT NOW(), 

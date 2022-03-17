@@ -24,9 +24,9 @@ public class DBUtil {
 		// design pattern - singleton design pattern
 		
 //		step 2
-		String connectionUrl = "jdbc:postgresql://localhost:5432/ers";
+		String connectionUrl = "jdbc:postgresql://ip-172-31-39-229.us-east-2.compute.internal:5432/ers";
 		String userName = "postgres";
-		String password = "1234";
+		String password = "mysecretpassword";
 		
 		if(conn == null) {
 			try {
